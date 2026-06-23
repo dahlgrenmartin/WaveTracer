@@ -1,0 +1,114 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Dataset & AUC & acc@0 & acc@0 (KDE) & acc@5\% FPR & TP & TN & FP & FN \\
+\midrule
+FLUX.2-dev -- FFHQ face-edit          & 0.9922 & 0.6880 & 0.9640 & 0.9680 & 479 & 485 & 15 & 21 \\
+FLUX.2-dev -- Text-to-Image           & 0.9364 & 0.6250 & 0.9000 & 0.5260 & 474 & 426 & 74 & 26 \\
+FLUX.1-dev -- Text-to-Image           & 0.9832 & 0.8378 & 0.9556 & 0.9606 & 1729 & 1711 & 89 & 71 \\
+SDXL -- Text-to-Image                 & 0.9522 & 0.7620 & 0.9040 & 0.7920 & 464 & 440 & 60 & 36 \\
+SDXL -- GenImage (cross-source)       & 0.9797 & 0.9170 & 0.9340 & 0.9600 & 494 & 440 & 60 & 6 \\
+Wan2.2 -- video frame                 & 0.9941 & 0.7371 & 0.9800 & 0.9943 & 173 & 170 & 5 & 2 \\
+Wan2.2 -- i2v smile-edit              & 0.7911 & 0.5890 & 0.7010 & 0.4060 & 263 & 438 & 62 & 237 \\
+SD1.5 -- Text-to-Image                & 0.9984 & 0.6680 & 0.9930 & 1.0000 & 500 & 493 & 7 & 0 \\
+\midrule
+Pooled                                & 0.8636 & 0.7561 & 0.9225 & 0.5244 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{Slope detector \texttt{L2\_LH+L2\_HH+L3\_LL} at step 3. \texttt{acc@0} is the zero-threshold accuracy, \texttt{acc@0 (KDE)} applies the per-VAE KDE offset, and \texttt{acc@5\% FPR} is the operating-point TPR at 5\% FPR.}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Dataset & AUC & acc@0 & acc@0 (KDE) & acc@5\% FPR & TP & TN & FP & FN \\
+\midrule
+FLUX.2-dev -- FFHQ face-edit          & 0.9982 & 0.6810 & 0.9850 & 0.9880 & 487 & 498 & 2 & 13 \\
+FLUX.2-dev -- Text-to-Image           & 0.9595 & 0.6030 & 0.9210 & 0.8020 & 480 & 441 & 59 & 20 \\
+FLUX.1-dev -- Text-to-Image           & 0.9927 & 0.8764 & 0.9794 & 0.9861 & 1756 & 1770 & 30 & 44 \\
+SDXL -- Text-to-Image                 & 0.9821 & 0.9220 & 0.9690 & 0.9860 & 492 & 477 & 23 & 8 \\
+SDXL -- GenImage (cross-source)       & 0.9926 & 0.9750 & 0.9760 & 1.0000 & 499 & 477 & 23 & 1 \\
+Wan2.2 -- video frame                 & 0.9969 & 0.9143 & 0.9943 & 0.9943 & 173 & 175 & 0 & 2 \\
+Wan2.2 -- i2v smile-edit              & 0.8924 & 0.6000 & 0.8170 & 0.6080 & 377 & 440 & 60 & 123 \\
+SD1.5 -- Text-to-Image                & 0.9995 & 0.8030 & 0.9950 & 1.0000 & 499 & 496 & 4 & 1 \\
+\midrule
+Pooled                                & 0.8931 & 0.8099 & 0.9585 & 0.6734 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{Slope detector \texttt{L2\_LH+L2\_HH+L3\_LL} at step 5. \texttt{acc@0} is the zero-threshold accuracy, \texttt{acc@0 (KDE)} applies the per-VAE KDE offset, and \texttt{acc@5\% FPR} is the operating-point TPR at 5\% FPR.}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Dataset & AUC & acc@0 & acc@0 (KDE) & acc@5\% FPR & TP & TN & FP & FN \\
+\midrule
+FLUX.2-dev -- FFHQ face-edit          & 0.9999 & 0.7220 & 0.9940 & 1.0000 & 499 & 495 & 5 & 1 \\
+FLUX.2-dev -- Text-to-Image           & 0.9769 & 0.5300 & 0.9460 & 0.9300 & 485 & 461 & 39 & 15 \\
+FLUX.1-dev -- Text-to-Image           & 0.9978 & 0.9656 & 0.9889 & 0.9978 & 1782 & 1778 & 22 & 18 \\
+SDXL -- Text-to-Image                 & 0.9955 & 0.9870 & 0.9880 & 0.9940 & 495 & 493 & 7 & 5 \\
+SDXL -- GenImage (cross-source)       & 0.9990 & 0.9920 & 0.9930 & 1.0000 & 500 & 493 & 7 & 0 \\
+Wan2.2 -- video frame                 & 0.9971 & 0.9886 & 0.9943 & 0.9943 & 173 & 175 & 0 & 2 \\
+Wan2.2 -- i2v smile-edit              & 0.9653 & 0.6000 & 0.9080 & 0.8540 & 447 & 461 & 39 & 53 \\
+SD1.5 -- Text-to-Image                & 0.9999 & 0.9290 & 0.9980 & 1.0000 & 500 & 498 & 2 & 0 \\
+\midrule
+Pooled                                & 0.9154 & 0.8625 & 0.9784 & 0.7821 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{Slope detector \texttt{L2\_LH+L2\_HH+L3\_LL} at step 10. \texttt{acc@0} is the zero-threshold accuracy, \texttt{acc@0 (KDE)} applies the per-VAE KDE offset, and \texttt{acc@5\% FPR} is the operating-point TPR at 5\% FPR.}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Dataset & AUC & acc@0 & acc@0 (KDE) & acc@5\% FPR & TP & TN & FP & FN \\
+\midrule
+FLUX.2-dev -- FFHQ face-edit          & 0.9951 & 0.9700 & 0.9760 & 1.0000 & 495 & 481 & 19 & 5 \\
+FLUX.2-dev -- Text-to-Image           & 0.9910 & 0.9740 & 0.9800 & 1.0000 & 496 & 484 & 16 & 4 \\
+FLUX.1-dev -- Text-to-Image           & 0.9989 & 0.9936 & 0.9978 & 0.9989 & 1796 & 1796 & 4 & 4 \\
+SDXL -- Text-to-Image                 & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 500 & 500 & 0 & 0 \\
+SDXL -- GenImage (cross-source)       & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 500 & 500 & 0 & 0 \\
+Wan2.2 -- video frame                 & 0.9992 & 0.9971 & 0.9971 & 0.9943 & 174 & 175 & 0 & 1 \\
+Wan2.2 -- i2v smile-edit              & 0.9999 & 0.6000 & 0.9970 & 1.0000 & 500 & 497 & 3 & 0 \\
+SD1.5 -- Text-to-Image                & 1.0000 & 0.9900 & 0.9990 & 1.0000 & 500 & 499 & 1 & 0 \\
+\midrule
+Pooled                                & 0.9670 & 0.9508 & 0.9943 & 0.9178 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{Slope detector \texttt{L2\_LH+L2\_HH+L3\_LL} at step 20. \texttt{acc@0} is the zero-threshold accuracy, \texttt{acc@0 (KDE)} applies the per-VAE KDE offset, and \texttt{acc@5\% FPR} is the operating-point TPR at 5\% FPR.}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Dataset & AUC & acc@0 & acc@0 (KDE) & acc@5\% FPR & TP & TN & FP & FN \\
+\midrule
+FLUX.2-dev -- FFHQ face-edit          & 1.0000 & 0.9960 & 1.0000 & 1.0000 & 500 & 500 & 0 & 0 \\
+FLUX.2-dev -- Text-to-Image           & 0.9980 & 0.9960 & 0.9980 & 1.0000 & 500 & 498 & 2 & 0 \\
+FLUX.1-dev -- Text-to-Image           & 0.9989 & 0.9872 & 0.9983 & 0.9983 & 1797 & 1797 & 3 & 3 \\
+SDXL -- Text-to-Image                 & 1.0000 & 0.9990 & 0.9990 & 1.0000 & 500 & 499 & 1 & 0 \\
+SDXL -- GenImage (cross-source)       & 1.0000 & 0.9980 & 0.9990 & 1.0000 & 500 & 499 & 1 & 0 \\
+Wan2.2 -- video frame                 & 1.0000 & 0.9971 & 0.9971 & 1.0000 & 174 & 175 & 0 & 1 \\
+Wan2.2 -- i2v smile-edit              & 0.9994 & 0.6000 & 0.9850 & 0.9960 & 496 & 489 & 11 & 4 \\
+SD1.5 -- Text-to-Image                & 1.0000 & 0.9960 & 0.9980 & 1.0000 & 500 & 498 & 2 & 0 \\
+\midrule
+Pooled                                & 0.9734 & 0.9536 & 0.9972 & 0.9214 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{Slope detector \texttt{L2\_LH+L2\_HH+L3\_LL} at step 30. \texttt{acc@0} is the zero-threshold accuracy, \texttt{acc@0 (KDE)} applies the per-VAE KDE offset, and \texttt{acc@5\% FPR} is the operating-point TPR at 5\% FPR.}
+\end{table}

@@ -1,0 +1,10 @@
+vae,task,n_real,n_synth,auc,sign0_no_kde,kde_offset_s30,sign0_kde,tpr_fpr5
+FLUX.2-dev,FFHQ face-edit (i2i),500,500,1.0,0.996,0.0219,1.0,1.0
+FLUX.2-dev,Text-to-Image,500,500,0.998,0.996,0.0219,0.998,1.0
+FLUX.1-dev,Text-to-Image,1800,1800,0.9989,0.9872,-0.018,0.9983,0.9983
+SDXL,Text-to-Image,500,500,1.0,0.999,-0.0014,0.999,1.0
+SDXL,GenImage (cross-source),500,500,1.0,0.998,-0.0014,0.999,1.0
+Qwen-Image-Edit,Face edit (i2i),500,500,1.0,0.881,-0.0294,0.998,1.0
+Wan2.2,i2v smile-edit,500,500,0.9994,0.6,-0.0584,0.986,0.996
+SD1.5,Text-to-Image,500,500,1.0,0.996,0.0133,0.998,1.0
+Pooled,all 8 deployments,5300,5300,0.9993,0.9453,per-VAE,0.9974,0.9994
