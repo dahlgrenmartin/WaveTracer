@@ -453,7 +453,7 @@ def plot(records, keys, steps, out: Path, metrics: list[str],
         axp.set(ylabel=traj_ylabel, xlabel="step")
         axp.set_title(title or traj_title, fontsize=10)
         axp.grid(True, alpha=0.3); axp.margins(x=0); axp.set_xlim(traj_xs[0], traj_xs[-1])
-        axp.legend(fontsize=7)
+        axp.legend(fontsize=7, loc="upper right")
 
         axl = fig.add_subplot(gs_top[0, 1])
         if objective == "dpsnr":
@@ -467,7 +467,7 @@ def plot(records, keys, steps, out: Path, metrics: list[str],
                     axl.fill_between(xs, lo, hi, color=color_map[name], alpha=0.18)
             axl.axhline(0, color="k", lw=0.6, alpha=0.5)
             axl.set(ylabel="ΔPSNR = PSNR - baseline (dB)", xlabel="step")
-            axl.grid(True, alpha=0.3); axl.margins(x=0); axl.set_xlim(xs[0], xs[-1]); axl.legend(fontsize=7)
+            axl.grid(True, alpha=0.3); axl.margins(x=0); axl.set_xlim(xs[0], xs[-1]); axl.legend(fontsize=7, loc="upper right")
             axl.set_title("ΔPSNR trajectory", fontsize=10)
         elif objective == "psnr":
             for name in label_names:
@@ -479,7 +479,7 @@ def plot(records, keys, steps, out: Path, metrics: list[str],
                     axl.fill_between(psnr_xs, lo, hi, color=color_map[name], alpha=0.18)
             axl.set(ylabel="PSNR (dB)", xlabel="step")
             axl.grid(True, alpha=0.3); axl.margins(x=0); axl.set_xlim(psnr_xs[0], psnr_xs[-1])
-            axl.legend(fontsize=7)
+            axl.legend(fontsize=7, loc="upper right")
             axl.set_title("PSNR trajectory (raw)", fontsize=10)
         elif has_loss:
             for name in label_names:
@@ -490,7 +490,7 @@ def plot(records, keys, steps, out: Path, metrics: list[str],
                     lo, hi = _bounds(arr, mu)
                     axl.fill_between(xs, lo, hi, color=color_map[name], alpha=0.18)
             axl.set_yscale("log"); axl.set(ylabel="refinement loss", xlabel="step")
-            axl.grid(True, alpha=0.3); axl.margins(x=0); axl.set_xlim(xs[0], xs[-1]); axl.legend(fontsize=7)
+            axl.grid(True, alpha=0.3); axl.margins(x=0); axl.set_xlim(xs[0], xs[-1]); axl.legend(fontsize=7, loc="upper right")
             axl.set_title("Refinement objective", fontsize=10)
         else:
             axl.text(0.5, 0.5, "no loss_* columns", ha="center", va="center", fontsize=9)
@@ -510,7 +510,7 @@ def plot(records, keys, steps, out: Path, metrics: list[str],
             axa.axhline(0.5, color="grey", linestyle="--", linewidth=0.8)
             axa.set_ylim(0, 1.05); axa.margins(x=0); axa.set_xlim(psnr_xs[0], psnr_xs[-1])
             axa.set(ylabel="separability AUC", xlabel="step")
-            axa.grid(True, alpha=0.3); axa.legend(fontsize=6, ncol=2)
+            axa.grid(True, alpha=0.3); axa.legend(fontsize=6, ncol=2, loc="lower right")
         else:
             axa.text(0.5, 0.5, "AUC needs real + synthetic labels", ha="center", va="center", fontsize=9)
             axa.set_xticks([]); axa.set_yticks([])
@@ -553,7 +553,7 @@ def plot(records, keys, steps, out: Path, metrics: list[str],
         ax.set(ylabel=traj_ylabel, xlabel="step")
         ax.set_title(title or traj_title, fontsize=10)
         ax.grid(True, alpha=0.3); ax.margins(x=0); ax.set_xlim(traj_xs[0], traj_xs[-1])
-        ax.legend(fontsize=7)
+        ax.legend(fontsize=7, loc="upper right")
 
     elif view == "objective":
         axl = fig.add_subplot(111)
@@ -568,7 +568,7 @@ def plot(records, keys, steps, out: Path, metrics: list[str],
                     axl.fill_between(xs, lo, hi, color=color_map[name], alpha=0.18)
             axl.axhline(0, color="k", lw=0.6, alpha=0.5)
             axl.set(ylabel="ΔPSNR = PSNR - baseline (dB)", xlabel="step")
-            axl.grid(True, alpha=0.3); axl.margins(x=0); axl.set_xlim(xs[0], xs[-1]); axl.legend(fontsize=7)
+            axl.grid(True, alpha=0.3); axl.margins(x=0); axl.set_xlim(xs[0], xs[-1]); axl.legend(fontsize=7, loc="upper right")
             axl.set_title("ΔPSNR trajectory", fontsize=10)
         elif objective == "psnr":
             for name in label_names:
@@ -580,7 +580,7 @@ def plot(records, keys, steps, out: Path, metrics: list[str],
                     axl.fill_between(psnr_xs, lo, hi, color=color_map[name], alpha=0.18)
             axl.set(ylabel="PSNR (dB)", xlabel="step")
             axl.grid(True, alpha=0.3); axl.margins(x=0); axl.set_xlim(psnr_xs[0], psnr_xs[-1])
-            axl.legend(fontsize=7)
+            axl.legend(fontsize=7, loc="upper right")
             axl.set_title("PSNR trajectory (raw)", fontsize=10)
         elif has_loss:
             for name in label_names:
@@ -591,7 +591,7 @@ def plot(records, keys, steps, out: Path, metrics: list[str],
                     lo, hi = _bounds(arr, mu)
                     axl.fill_between(xs, lo, hi, color=color_map[name], alpha=0.18)
             axl.set_yscale("log"); axl.set(ylabel="refinement loss", xlabel="step")
-            axl.grid(True, alpha=0.3); axl.margins(x=0); axl.set_xlim(xs[0], xs[-1]); axl.legend(fontsize=7)
+            axl.grid(True, alpha=0.3); axl.margins(x=0); axl.set_xlim(xs[0], xs[-1]); axl.legend(fontsize=7, loc="upper right")
             axl.set_title("Refinement objective", fontsize=10)
         else:
             axl.text(0.5, 0.5, "no loss_* columns", ha="center", va="center", fontsize=9)
@@ -612,7 +612,7 @@ def plot(records, keys, steps, out: Path, metrics: list[str],
             axa.axhline(0.5, color="grey", linestyle="--", linewidth=0.8)
             axa.set_ylim(0, 1.05); axa.margins(x=0); axa.set_xlim(psnr_xs[0], psnr_xs[-1])
             axa.set(ylabel="separability AUC", xlabel="step")
-            axa.grid(True, alpha=0.3); axa.legend(fontsize=6, ncol=2)
+            axa.grid(True, alpha=0.3); axa.legend(fontsize=6, ncol=2, loc="lower right")
         else:
             axa.text(0.5, 0.5, "AUC needs real + synthetic labels", ha="center", va="center", fontsize=9)
             axa.set_xticks([]); axa.set_yticks([])
@@ -701,7 +701,7 @@ def _plot_band_panel(ax, key, lvl, bandname, cc, metric, per_label, all_vals,
     ax.margins(x=0)
     ax.set_xlim(xs[0], xs[-1])
     ax.set_xlabel("step", fontsize=8)
-    ax.legend(fontsize=6)
+    ax.legend(fontsize=6, loc="upper right")
     if cc == 0:
         ax.set_ylabel(_METRIC_LABEL[metric], fontsize=8)
 
@@ -862,7 +862,7 @@ def plot_ribbon(records, keys, steps, out: Path, ribbon_height, title: str) -> N
         ax.margins(x=0)
         ax.set_xlim(xs[0], xs[-1])
         if ax is axes[0]:
-            ax.legend(fontsize=7, ncol=2, loc="best")
+            ax.legend(fontsize=7, ncol=2, loc="upper right")
     hdesc = "±std" if ribbon_height == "std" else f"±{ribbon_height} dB"
     fig.suptitle(title or f"PSNR curve — subband energy-ratio ribbon ({hdesc})")
     fig.tight_layout()
